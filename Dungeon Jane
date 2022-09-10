@@ -1,0 +1,236 @@
+# Perguntar nome e classe,
+# Definir vida e poder
+# começar missão e iniciar luta com monstros em random
+# ao lutar definir dano com o diferencial da classe
+
+
+
+
+
+import os
+
+from random import random
+
+
+import random
+
+def DungeonJane():
+
+    os.system('cls')
+
+
+    
+
+    nome()
+
+
+
+
+
+
+
+
+
+
+#----------------------------------------------------------------------------------------------------
+
+
+#----------------------------------------------------------------------------------------------------
+def nome():
+    name = input("Nome do personagem: ")
+    name = name.capitalize()
+
+    print(f"Muito bem {name}")
+    classes(name)
+#----------------------------------------------------------------------------------------------------
+def classes(name):
+    classe = input(f"{name} escolha sua classe\n[1] Mago\n[2] Guerreiro\n")
+        
+
+    if classe == "1":
+        vida = 25
+        poder = 16
+        print("Voce escolheu o enígmatico mago")
+        print("Vida: ",vida)
+        print("Poder: ",poder)
+        class_escolhida = "Mago"
+
+    elif classe == "2":
+        vida = 70
+        poder = 9
+        print("Voce escolheu o poderoso guerreiro")
+        print("Vida: ", vida)
+        print("Poder: ",poder)
+        class_escolhida = "Guerreiro"
+
+            
+
+          
+        
+        
+        
+    print(f"Sua classe {class_escolhida}")
+
+    print(f"Muito bem nobre {class_escolhida}, agora iremos para nossa primeira missão.")
+    print("Siga-me para a colina salto de pena")
+    print(f"Oh não, aqui nós temos um monstro ele irá nos matar,\n {name} o que faremos?")
+    acao1 = input("[1] Ficar e lutar\n[2] Tentar fugir\n")
+
+    if acao1 == "1":
+        print("Aee")
+        monstrosrandom(vida, poder, class_escolhida, name)
+
+    if acao1 == "2":
+        print("Ao fugir você morreu por vergonha, agora outro continuara a aventura")
+#----------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
+
+def lutar(vida, poder, class_escolhida, name, vida_monster, poder_monster, elemento):
+            print("Aee")
+            print(vida_monster, elemento)
+
+            while vida_monster != 0:
+
+                print(name)
+                print(f"Poder: {poder}")
+                print(f"Vida {vida}")
+                print("/"*vida)
+                print("")
+                print(elemento)
+                print(f"Poder: {poder_monster}")
+                print(f"vida: {vida_monster}")
+                print("/"*vida_monster)
+                print("")
+
+
+                
+                if class_escolhida == "Guerreiro":
+                    luta = input("[1] Atacar\n[2] Bolsa\n[3] Fugir do combate\n").upper()
+                
+                elif class_escolhida == "Mago":
+                    luta = input("[1] Atacar\n[2] Magias\n[3] Bag\n[4] Fugir do combate\n").upper()
+
+
+                    #dano 
+                x = random.randint(1,20)
+                y = random.randint(1,20)
+                                        # QUANDO VOCÊ ATACA
+
+
+                if luta == "1":
+                    print("Ok")
+
+                    if x >= 10:
+                        print(f"Rolou {x}")
+                        totaldano = x + poder
+                    
+                        print(f"{name} acertou {totaldano} de dano")
+                        vida_monster -= totaldano
+                        print(f"Agora o {elemento} tem {vida_monster}")
+                        print("/"*vida_monster)
+                
+
+                    elif x <= 9:
+                        print(f"Rolou {x}")
+                        print(f"{name} errou o golpe\n")
+                    
+
+
+                    if vida_monster <= 0:
+                        print(f"O {elemento} está morto!")
+                        volte = input("Quer recomeçar o jogo? S/N").upper() 
+                        if volte == "S":
+                            DungeonJane()
+
+                    print("")
+                    print("")
+                        
+
+                            # QUANDO O MOSNTRO ATACA
+                    print(f"Agora {elemento} irá revidar!\n")
+                    
+                    if y >= 10:
+                        print(f"Rolou {y}")
+                        totaldanomonster = y + poder_monster
+                        print(f"{elemento} acertou {totaldanomonster}")
+                        vida -= totaldanomonster
+                        print(f"Vida do {name} {vida}")
+                        print("/"*vida)
+                                    
+
+                    elif y <= 9:
+                        print(f"Rolou {y}")
+                        print(f"O {elemento} errou você\n")
+
+
+
+                    #Quando morre
+
+
+
+                        
+
+                    if vida <= 0:
+                        print(f"{name} morreu!")
+                        volte = input("Quer recomeçar o jogo? S/N").upper()
+                        if volte == "S":
+                            DungeonJane()
+                    
+                
+def monstrosrandom(vida, poder, class_escolhida, name):
+
+    listamonstros = ["ARANHA", "LOBO NEGRO DA MORTE", "RATO", "MAMUTE DE GUERRA", "GUERREIRO DA CIDADE PRINCIPAL"]
+
+    elemento = random.choice(listamonstros)
+
+    if elemento == "ARANHA":
+        poder_monster = 8
+        vida_monster  = 60
+    
+    elif elemento == "LOBO NEGRO DA MORTE":
+        poder_monster = 12
+        vida_monster  = 40
+
+    elif elemento == "RATO":
+        poder_monster = 1
+        vida_monster  = 20
+
+    elif elemento == "MAMUTE DE GUERRA":
+        poder_monster = 7
+        vida_monster = 100
+
+    elif elemento == "GUERREIRO DA CIDADE PRINCIPAL":
+        poder_monster = 18
+        vida_monster  = 50
+
+
+    lutar(vida, poder, class_escolhida, name, vida_monster, poder_monster, elemento)
+
+
+
+
+
+
+
+#                      QUANDO MORRE
+        
+
+
+
+#----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(__name__=="__main__"):
+    DungeonJane()
