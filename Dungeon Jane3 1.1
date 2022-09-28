@@ -1,0 +1,425 @@
+
+import random
+import os
+
+
+
+os.system("cls")
+
+
+
+
+
+
+class personagem:
+    nome1 = input("Qual seu nome?\n").upper()
+    name = nome1
+    def nomes(self):
+        self.name
+
+
+    print("[1] Warrior")
+    print("[2] Fazendeiro")
+    class1 = input("Qual classe: \n")
+    if class1 == '1':
+        class1 = "Guerreiro"
+        print(f"Agora você é {nome1} o {class1}")
+        vida = 90
+        poder = 15
+    
+    if class1 == "2":
+        class1 = "Fazendeiro"
+        print(f"Agora você é {nome1} o {class1}")
+        vida = 10
+        poder = 6
+
+    classe_combate = class1
+    def classes(self):
+        self.classe_combate
+
+    
+    meu_ouro = 0
+    nivel_caverna = 0
+
+
+
+class monster4:
+
+    
+    def monstros(self):
+        
+        
+        listamonstros = ["ARANHA", "LOBO ATROZ", "RATO", "MAMUTE DE GUERRA", "GUERREIRO DA CIDADE PRINCIPAL"]
+
+        elemento = random.choice(listamonstros)
+
+        if elemento == "ARANHA":
+            poder_monster = 8
+            vida_monster  = 60
+            ouro = 40
+        elif elemento == "LOBO ATROZ":
+            poder_monster = 12
+            vida_monster  = 40
+            ouro = 60
+        elif elemento == "RATO":
+            poder_monster = 1
+            vida_monster  = 20
+            ouro = 1
+        elif elemento == "MAMUTE DE GUERRA":
+            poder_monster = 7
+            vida_monster = 100
+            ouro = 250
+        elif elemento == "GUERREIRO DA CIDADE PRINCIPAL":
+            poder_monster = 18
+            vida_monster  = 50
+            ouro = 80
+        self.elemento = elemento
+        self.poder_monster = poder_monster
+        self.vida_monster = vida_monster
+        self.ouro = ouro
+
+
+
+
+
+class sala1:
+    def sala01(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Ouro: {mun.meu_ouro}")
+            print("Muito bem, vamos para dentro da caverna\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}\n")
+            fi = luta9()
+            fi.luta8()
+
+class sala2:
+    def sala02(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, vamos para a segunda fase\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+            
+
+    # Fugir 
+        
+
+class sala3direito:
+        def sala03direita(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, 3 oarte da direita\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+
+class sala3esquerdo:
+        def sala03esquerdo(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, 3 oarte da esquerdo\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+
+class sala3reto:
+        def sala03reto(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, 3 oarte da esquerdo\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+
+class sala4ladoA:
+        def sala04ladoA(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, estamos na 4 parte do lado A\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+
+
+class sala4ladoB:
+        def sala04ladoB(self):
+            print(f"vida: {mun.vida}")
+            print(f"poder: {mun.poder}")
+            print(f"Meu ouro {mun.meu_ouro}")
+            print("Muito bem, estamos na 4 parte do lado B\n")
+            print(f"Inimigo: {mon.elemento}")
+            print(f"Vida inimigo: {mon.vida_monster}")
+            print(f"Poder inimigo: {mon.poder_monster}")
+            fi = luta9()
+            fi.luta8()
+
+
+
+
+class luta9:
+    def luta8(self):
+
+      while mon.vida_monster != 0:
+        
+        print(f"{mun.nome1}")
+        print(mun.vida)
+        print(f"/"*mun.vida)
+        print("*")
+        print(f"{mon.elemento}")
+        print(mon.vida_monster)
+        print(f"/"*mon.vida_monster)
+
+        lut = input(f"Atacar?\n")
+        if lut == "1":
+            
+            p = random.randint(1,20)
+            m = random.randint(1,20)
+
+
+
+
+            todos_golpes = ["Desfere um corte reto", "Aferiu uma estocada direta", "Fez um corte lateral"]
+
+            golpes_guerreiro = random.choice(todos_golpes)           
+
+
+
+            if p >= 10:
+                print(f"Você rolou! {p} acertou!")
+                dano_total = p + mun.poder
+                mon.vida_monster -= dano_total
+                print(f"{golpes_guerreiro}, {dano_total} de dano, agora o monstro tem {mon.vida_monster} de vida ")
+                print(f"/"*mon.vida_monster)
+            
+            elif p <= 9:
+                print(f"Rolou {p}, você errou")
+
+            if mon.vida_monster <= 0:
+                print(f"{mon.elemento} morreu, você coletou {mon.ouro} de ouro")  
+                mun.meu_ouro += mon.ouro
+                print(f'Agora você tem {mun.meu_ouro} de ouro\n')
+                mun.nivel_caverna += 1
+                break
+
+
+             # Monstro ataca
+            
+            if m >= 10:
+                print(f"{mon.elemento} irá atacar")
+                print(f' Monstro rolou {m}')
+                dano_monstro_total = m + mon.poder_monster
+                mun.vida -= dano_monstro_total
+                print(f"O monstro acertou {dano_monstro_total} de dano, agora você tem {mun.vida} de vida")
+                print(f"/"*mun.vida)
+
+            elif m <= 9:
+                print(f"Rolou {m}, ele errou")
+
+            # Você morreu!
+
+
+
+        if mun.vida <= 0:
+            print(f"{mun.nome1} morreu\n")
+            uu = finalmesmo()
+            uu.finalmesmo1()
+        
+
+        elif lut == "2":
+            print("Ah ok")
+            break
+
+
+class finalmesmo:
+    def finalmesmo1(self):
+        print("[0] Para ver o histórico")
+        print("[1] Para fechar o jogo")
+        historico = input("Digite: ")
+
+
+        if historico == '0':
+            
+            print(f"\nParabéns {mun.nome1} este é seu histórico.".center(100))
+            print(f"Chegou até a caverna: Nivel {mun.nivel_caverna}".center(100))
+            print(f"Moedas de ouro coletado {mun.meu_ouro}".center(100))
+            exit()
+
+        elif historico == '1':
+            print("Desligando....")
+            exit()
+            
+
+
+
+ 
+
+# Meu personagem
+mun = personagem()
+mun.classes()
+
+
+
+# Inicio
+qual1 = 0
+while qual1 != 1:
+    print("De frente a caverna Dungeon Jane, você terá coragem de entrar?")
+    print("Escolhas:")
+    print("[1] Entrar pela caverna")
+    print("[0] Retornar para Gondor")
+    qual0 = input("Digite sua escolha:")
+
+    if qual0 == "0":
+        uu = finalmesmo()
+        uu.finalmesmo1()
+
+    if qual0 == "1":
+        break
+
+
+#Caverna 1
+mon = monster4()
+mon.monstros()
+ll = sala1()
+ll.sala01()
+qual1 = 0
+while qual1 != 1:
+    print("Sala 01")
+    print("[1] Ir reto")
+    print("[2] Repetir a caverna")
+    print("[3] Investigar local")
+    print("[0] Ir embora")
+    qual1 = input("Qual caminho quer1?")
+
+    if qual1 == "3":
+        print("Aqui é apenas a primeira sala, há apenas um caminho em frente.")
+
+    if qual1 == "2":
+        print("Vamos procurar por mais uma briga!")
+
+    if qual1 == "1":
+        break
+
+    if qual1 == "0":
+        uu = finalmesmo()
+        uu.finalmesmo1()
+
+#Caverna 2
+qual2 = 0
+while qual2 != 1:
+    mon = monster4()
+    mon.monstros()
+    l2 = sala2()
+    l2.sala02()
+    print("Sala 02")
+    print("[1] Ir reto")
+    print("[2] Ir para direita")
+    print("[3] Ir para esquerda")
+    print("[4] investigar")
+    print("[0] Ir embora")
+    qual2 = input("Qual caminho quer1?")
+    
+    if qual2 == "2":
+        print("Você não encontrou nada de útil aqui!")
+    
+    if qual1 == "0":
+        uu = finalmesmo()
+        uu.finalmesmo1()
+
+
+#Caverna 3
+    if qual2 == "1":
+        mon = monster4()
+        mon.monstros()
+        ll = sala4ladoA()
+        ll.sala04ladoA()
+        print("Sala 03 corredor de lava")
+        print("[1] Ir reto")
+        print("[2] Ir para direita")
+        print("[3] Ir para esquerda")
+        print("[4] investigar")
+        print("[0] Ir embora")
+        qual2 = input("Qual caminho quer1?")
+
+    elif qual2 == "2":
+        mon = monster4()
+        mon.monstros()
+        ll = sala3esquerdo()
+        ll.sala03esquerdo()
+        print("Sala 03 corredor de pantano")
+        print("[1] Ir reto")
+        print("[2] Ir para direita")
+        print("[3] Ir para esquerda")
+        print("[4] investigar")
+        print("[0] Ir embora")
+        qual2 = input("Qual caminho quer1?")
+
+    elif qual2 == "3":
+        mon = monster4()
+        mon.monstros()
+        ll = sala3reto()
+        ll.sala03reto()
+        print("Sala 03 corredor grande salão de festas")
+        print("[1] Ir reto")
+        print("[2] Ir para direita")
+        print("[3] Ir para esquerda")
+        print("[4] investigar")
+        print("[0] Ir embora")
+        qual2 = input("Qual caminho quer1?")
+
+
+
+
+
+#666666666666666666666666666666666666
+
+
+# Caverna 4
+ll = sala4ladoA()
+ll.sala04ladoA()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+uu = finalmesmo()
+uu.finalmesmo1()
+
+
+
+    
