@@ -1,0 +1,68 @@
+
+
+import random
+
+class monster4:
+
+    
+    def monstros(self):
+        listamonstros = ["ARANHA", "LOBO ATROZ", "RATO", "MAMUTE DE GUERRA", "GUERREIRO DA CIDADE PRINCIPAL"]
+
+        elemento = random.choice(listamonstros)
+
+        if elemento == "ARANHA":
+            poder_monster = 8
+            vida_monster  = 60
+            ouro = 40
+        elif elemento == "LOBO ATROZ":
+            poder_monster = 12
+            vida_monster  = 40
+            ouro = 60
+        elif elemento == "RATO":
+            poder_monster = 1
+            vida_monster  = 20
+            ouro = 1
+        elif elemento == "MAMUTE DE GUERRA":
+            poder_monster = 7
+            vida_monster = 100
+            ouro = 250
+        elif elemento == "GUERREIRO DA CIDADE PRINCIPAL":
+            poder_monster = 18
+            vida_monster  = 50
+            ouro = 80
+        self.elemento = elemento
+        self.poder_monster = poder_monster
+        self.vida_monster = vida_monster
+        self.ouro = ouro
+
+class repeat:
+    def repete(self):
+
+        macaco = input("Diz ai quer de novo?")
+        while macaco != "1":
+            mon = monster4()
+            mon.monstros()
+            print(mon.elemento)
+            macaco = input("Diz ai quer de novo?")
+            if macaco == "2":
+                j = menu()
+                j.menus()
+
+
+class menu(repeat):
+    def menus(self):
+        monk = 0
+        while monk != "1":
+            print("Explorar")
+            print("Viajar")
+            print("Lutar novamente")
+            acoes = input("O que quer fazer?")
+            if acoes == "3":
+                r = repeat()
+                r.repete()
+
+
+
+
+j = menu()
+j.menus()
