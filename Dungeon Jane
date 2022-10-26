@@ -1,7 +1,5 @@
-# Perguntar nome e classe,
-# Definir vida e poder
-# começar missão e iniciar luta com monstros em random
-# ao lutar definir dano com o diferencial da classe
+# Seja bem vindo, esta é a primeira versão de um jogo chamado Dungeon Jane, um RPG de texto em andamento, para usar esse jogo precisara usar a linguagem 
+# Python,o jogo lhe perguntara seu nome e classe de personagem, cada classe tem diferentes caracteristicas de combate.
 
 
 
