@@ -1,0 +1,34 @@
+class exp:
+    def xp(self):
+
+        lv = 0
+        xp_personagem = 0
+        up = 20
+        up = up * 2
+
+        while True:
+            print("Level: ", lv)
+            print("XP: ", xp_personagem)
+            print("Necessidade up", up)
+            print(xp_personagem, "/", up)
+            per = input("Quer aumentar seu xp?")
+
+            if per == "1":
+                xp_personagem += 450
+
+            if xp_personagem >= up:
+
+                while xp_personagem >= up:
+                    xp_personagem -= up
+
+                    up = up * 2
+
+                    lv += 1
+
+                    if xp_personagem <= 0:
+                        xp_personagem = 0
+
+            if per == "2":
+                break
+
+        self.xp_personagem = xp_personagem
