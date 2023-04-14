@@ -14,7 +14,7 @@ class personagem:
     lv = 0
     xp_personagem = 0
     up = 20
-    up = up * 2
+    
 
     def nomes(self):
         self.name
@@ -125,6 +125,22 @@ class combate(monster4):
                 break
 
             if mon.vida_monster1 <= 0:
+                j.xp_personagem += mon.xpmonster1
+                if j.xp_personagem >= j.up:
+                    while j.xp_personagem >= j.up:
+                        j.xp_personagem -= j.up
+
+                        j.up = j.up * 2
+
+                        j.lv += 1
+
+                        if j.xp_personagem == 0:
+                            j.xp_personagem = 0
+                            break
+
+
+
+
                 j.ouro += mon.ouro1
 
                 print(mon.elemento1, "morreu")
@@ -184,8 +200,8 @@ class menu(repeat, personagem):
                 print("- Aqui o nome:", j.name)
                 print("- Aqui a vida total:", j.vida)
                 print("- Aqui o ouro:", j.ouro)
-                print("- Aqui o seu XP:",j.xp_personagem )
-                print("- Aqui o seu Level:",j.up )
+                print("- Aqui o seu XP:", j.xp_personagem, "/",j.up)
+                print("- Aqui o seu Level:",j.lv )
 
 
 class menu2(repeat, personagem):
