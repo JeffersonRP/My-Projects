@@ -1,0 +1,225 @@
+# Este é a versão mais correta e funcional do Dungeon Jane, agora podemos repetir as lutas a vontade e passar para a próxima sala e fazer a mesma luta sem que
+# tenha que repetir o código de combate mais vezes, por favor experimente e deixe comentarios para mim no meu Likendin.
+
+import random
+
+
+class personagem:
+    nome1 = input("Qual seu nome?\n").upper()
+
+    name = nome1
+    ouro = 0
+    poderhero = 100
+    vida = 250
+    lv = 0
+    xp_personagem = 0
+    up = 20
+    up = up * 2
+
+    def nomes(self):
+        self.name
+        self.ouro
+        self.vida
+        self.poderhero
+        self.lv
+        self.xp_personagem
+        self.up
+
+
+class monster4:
+
+    def monstros(self):
+        listamonstros = ["ARANHA", "LOBO ATROZ", "RATO",
+                         "MAMUTE DE GUERRA", "GUERREIRO DA CIDADE PRINCIPAL"]
+
+        elemento = random.choice(listamonstros)
+
+        if elemento == "ARANHA":
+            poder_monster = 8
+            vida_monster = 60
+            ouro = 40
+            xpmonster = 100
+
+        elif elemento == "LOBO ATROZ":
+            poder_monster = 12
+            vida_monster = 40
+            ouro = 60
+            xpmonster = 150
+
+        elif elemento == "RATO":
+            poder_monster = 1
+            vida_monster = 20
+            ouro = 1
+            xpmonster = 10
+
+        elif elemento == "MAMUTE DE GUERRA":
+            poder_monster = 7
+            vida_monster = 100
+            ouro = 250
+            xpmonster = 400
+
+        elif elemento == "GUERREIRO DA CIDADE PRINCIPAL":
+            poder_monster = 18
+            vida_monster = 50
+            ouro = 80
+            xpmonster = 800
+
+        self.elemento1 = elemento
+        self.poder_monster1 = poder_monster
+        self.vida_monster1 = vida_monster
+        self.ouro1 = ouro
+        self.xpmonster1 = xpmonster
+
+
+
+
+
+
+
+class combate(monster4):
+    def combate0(self):
+        
+        mon = monster4()
+        mon.monstros()
+        while mon.vida_monster1 != 0:
+            print("\n")
+            print(":"*45)
+            print("CRIATURA:",mon.elemento1)
+            print("VIDA:",mon.vida_monster1)
+            print("FORÇA:",mon.poder_monster1)
+            print(":"*45)
+            print("[1]Atacar")
+            print("[2]Desistir")
+            lut = input(f"Digite sua escolha\n")
+
+
+
+            if lut == "1":
+                dicehero = random.randint(1, 20)
+                dicemonster = random.randint(1, 20)
+
+                print(":"*45)
+                if dicemonster >= 11:
+                    print("O monstro acertou.")
+                    print("Você perdeu", mon.poder_monster1, "de vida.")
+                    j.vida -= mon.poder_monster1
+                    
+                if dicemonster <=10:
+                    print("O monstro errou.")
+
+                print(":"*45)
+
+                if dicehero >= 11:
+                    print("Você acertou", j.poderhero, "de dano.")
+                    mon.vida_monster1 -= j.poderhero
+
+                if dicehero <= 10:
+                    print("Você errou.")
+                print(":"*45)
+
+                
+                    
+        
+        
+            elif lut == "2":
+                break
+
+            if mon.vida_monster1 <= 0:
+                j.ouro += mon.ouro1
+
+                print(mon.elemento1, "morreu")
+                print("Você ganhou", mon.ouro1, "de ouro")
+                print("Você ganhou", mon.xpmonster1, "de XP")
+                
+                break
+            
+
+            if j.vida <0:
+                print("Você morreu")
+                break
+
+
+
+
+
+class repeat:
+    def repete(self):
+
+        macaco = 0
+        while macaco != "2":
+            print("[1] Lutar")
+            print("[2] Voltar ao menu")
+            
+            macaco = input("Digite sua escolha:")
+            if macaco == "1":
+                t = combate()
+                t.combate0()
+        
+        
+                
+
+
+
+class menu(repeat, personagem):
+    def menus(self):
+        monk = 0
+        while monk != "1":
+            print("\nSala 01")
+
+            print("\n[1] Explorar")
+            print("[2] ir em frente")
+            print("[3] Procurar briga")
+            print("[4] Status")
+            acoes = input("O que quer fazer?")
+
+            if acoes == "2":
+                u = menu2()
+                u.menus2()
+
+            if acoes == "3":
+                r = repeat()
+                r.repete()
+
+            if acoes == "4":
+                print("- Aqui o nome:", j.name)
+                print("- Aqui a vida total:", j.vida)
+                print("- Aqui o ouro:", j.ouro)
+                print("- Aqui o seu XP:",j.xp_personagem )
+                print("- Aqui o seu Level:",j.up )
+
+
+class menu2(repeat, personagem):
+    def menus2(self):
+        monk = 0
+        while monk != "1":
+            print("\nSala 02")
+            print("- Aqui o nome:", j.name)
+            print("- Aqui o ouro:", j.ouro)
+            # print("- Aqui a vida total:",j.vida1)
+            print("[1] Explorar")
+            print("[2] escolher lado esquerdo")
+            print("[3] escolher lado direito")
+            print("[4] Lutar novamente")
+            print("[5] Voltar para trás")
+
+            acoes = input("O que quer fazer?")
+            if acoes == "3":
+                r = repeat()
+                r.repete()
+
+            if acoes == "5":
+                p = menu()
+                p.menus()
+
+
+j = personagem()
+
+
+j = menu()
+j.menus()
+
+
+
+
+
+
