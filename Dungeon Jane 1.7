@@ -1,0 +1,344 @@
+# Agora possui poções de vida, gasto de ouro e aumento de status
+
+# Este é a versão mais correta e funcional do Dungeon Jane, agora podemos repetir as lutas a vontade e passar para a próxima sala e fazer a mesma luta sem que
+# tenha que repetir o código de combate mais vezes, por favor experimente e deixe comentarios para mim no meu Likendin.
+
+import random
+import sys
+
+class personagem:
+    nome1 = input("Qual seu nome?\n").upper()
+
+    name = nome1
+    ouro = 1110
+    poderhero = 30
+
+    vida = 250
+    vidatemp = vida
+
+    lv = 0
+    xp_personagem = 0
+    up = 300
+
+    arma = 0
+
+    if vidatemp > vida:
+        vidatemp = vida
+
+    def nomes(self):
+        self.name
+        self.ouro
+        self.vida
+        self.poderhero
+        self.lv
+        self.xp_personagem
+        self.up
+
+
+class monster4:
+
+    def monstros(self):
+        listamonstros = ["ARANHA", "LOBO ATROZ", "RATO",
+                         "MAMUTE DE GUERRA", "GUERREIRO DA CIDADE PRINCIPAL"]
+
+        elemento = random.choice(listamonstros)
+
+        if elemento == "ARANHA":
+            poder_monster = 15
+            vida_monster = 60
+            ouro = 40
+            xpmonster = 100
+
+        elif elemento == "LOBO ATROZ":
+            poder_monster = 18
+            vida_monster = 40
+            ouro = 60
+            xpmonster = 150
+
+        elif elemento == "RATO":
+            poder_monster = 1
+            vida_monster = 20
+            ouro = 1
+            xpmonster = 10
+
+        elif elemento == "MAMUTE DE GUERRA":
+            poder_monster = 15
+            vida_monster = 150
+            ouro = 250
+            xpmonster = 400
+
+        elif elemento == "GUERREIRO DA CIDADE PRINCIPAL":
+            poder_monster = 30
+            vida_monster = 50
+            ouro = 400
+            xpmonster = 800
+
+        self.elemento1 = elemento
+        self.poder_monster1 = poder_monster
+        self.vida_monster1 = vida_monster
+        self.ouro1 = ouro
+        self.xpmonster1 = xpmonster
+
+
+
+
+
+
+
+class combate(monster4):
+    def combate0(self):
+        
+        mon = monster4()
+        mon.monstros()
+        while mon.vida_monster1 != 0:
+            print("\n")
+            print(":"*45)
+            print(j.name)
+            print("VIDA:", j.vidatemp,"/",j.vida)
+            
+            print(":"*45)
+            print(":"*45)
+            print("CRIATURA:",mon.elemento1, "LV - 18")
+            print("VIDA:",mon.vida_monster1)
+            print(":"*45)
+            print("[1]Atacar")
+            print("[2]Desistir")
+            lut = input(f"Digite sua escolha\n")
+
+
+
+            if lut == "1":
+                dicehero = random.randint(1, 20)
+                dicemonster = random.randint(1, 20)
+
+                print(":"*45)
+                if dicemonster >= 11:
+                    print("O monstro acertou.")
+                    print("Você perdeu", mon.poder_monster1, "de vida.")
+                    j.vidatemp -= mon.poder_monster1
+                   
+
+                # Se você morrer
+                    if j.vidatemp <= 0:
+                        print(":"*45)
+                        print("- Nome:", j.name)
+                        print("- Vida:", j.vidatemp,"/",j.vida)
+                        print("- Poder:", j.poderhero)
+                        print("- Ouro:", j.ouro)
+                        print("- Level:",j.lv )
+                        print("- XP:", j.xp_personagem, "/",j.up)
+                        print("Você morreu")
+                        print(":"*45)
+                        sys.exit()
+                    
+                if dicemonster <=10:
+                    print("O monstro errou.")
+
+                print(":"*45)
+
+                if dicehero >= 11:
+                    print("Você acertou", j.poderhero, "de dano")
+                    mon.vida_monster1 -= j.poderhero
+                
+
+                if dicehero <= 10:
+                    print("Você errou.")
+                print(":"*45)
+
+                
+                    
+        
+            # Saiu da luta
+            elif lut == "2":
+                break
+
+            # Matou o monstro
+            if mon.vida_monster1 <= 0:
+                j.ouro += mon.ouro1
+                j.xp_personagem += mon.xpmonster1
+                if j.xp_personagem >= j.up:
+                    
+                    print(mon.elemento1, "morreu")
+                    
+                    
+
+
+                    while j.xp_personagem >= j.up:
+                        j.xp_personagem -= j.up
+
+
+                        j.up = j.up * 2
+
+                        j.lv += 1
+
+                    # Se subiu de nivel
+                        print("Subiu para o nivel", j.lv, "!")
+                        print("[1] Aumentar vida", j.vida, "+ 10")
+                        print("[2] Aumentar poder", j.poderhero, "+ 10")
+                        max = input("Escolha:")
+
+                        if max == "1":
+                            j.vida += 10
+
+                        if max == "2":
+                            j.poderhero += 10
+
+
+
+                        if j.xp_personagem == 0:
+                            j.xp_personagem = 0
+                            break
+                
+                print("Você ganhou", mon.ouro1, "de ouro")
+                print("Você ganhou", mon.xpmonster1, "de XP")
+                print("- XP:", j.xp_personagem, "/",j.up, "|",j.lv,">>LV", j.lv +1)
+                
+                break
+            
+   
+            
+
+
+
+
+
+
+
+
+class repeat:
+    def repete(self):
+
+        macaco = 0
+        while macaco != "2":
+            print("[1] Lutar")
+            print("[2] Voltar ao menu")
+            print("[4] Status")
+            
+            macaco = input("Digite sua escolha:")
+            if macaco == "1":
+                t = combate()
+                t.combate0()
+
+            if macaco == "4":
+                print("- Nome:", j.name)
+                print("- Vida:", j.vidatemp,"/",j.vida)
+                print("- Poder:", j.poderhero)
+                print("- Ouro:", j.ouro)
+                print("- Level:",j.lv )
+                print("- XP:", j.xp_personagem, "/",j.up)
+
+
+
+
+
+class menu(repeat, personagem):
+    def menus(self):
+        monk = 0
+        while monk != "1":
+            print("\nSala 01")
+
+            print("\n[6] Bolsa")
+            print("[2] ir em frente")
+            print("[3] Procurar briga")
+            print("[4] Status")
+            print("[5] Loja")
+            acoes = input("O que quer fazer?")
+
+            if acoes == "6":
+                bolsa_de_itens = {"pocao_de_vida": 3, "espada": 1, "escudo": 1}
+                print("Bolsa de itens:")
+                for item, quantidade in bolsa_de_itens.items():
+                    print(f"{item}: {quantidade}")
+
+                
+            if acoes == "2":
+                u = menu2()
+                u.menus2()
+
+            if acoes == "3":
+                r = repeat()
+                r.repete()
+
+            if acoes == "4":
+                print("- Nome:", j.name)
+                print("- Vida:", j.vidatemp,"/",j.vida)
+                print("- Poder:", j.poderhero)
+                print("- Ouro:", j.ouro)
+                print("- Level:",j.lv )
+                print("- XP:", j.xp_personagem, "/",j.up)
+
+        # Loja de poções
+            if acoes == "5":
+                monk2 = 0
+                while monk2 != "1":
+                    print("Magicas de R$ 1,99")
+                    print("Ouro:", j.ouro)
+                    print("[1] Poção minuscula +50 de vida |\033[1;31m 200 de ouro\033[;1m")
+                    print("[2] Pedra extremamente grande   |\033[1;31m 1015 de ouro\033[;1m")
+                    print("[9] Sair")
+                    n2 = input("Qual sua escolha?")
+
+                    if n2 == "1":
+                        if j.ouro < 200:
+                            print("[[Não possui ouro suficiente]]")
+
+                        elif j.ouro >= 200:
+                            if j.vidatemp < j.vida:
+                                j.vidatemp += 50
+                                j.ouro -= 200
+                                print("[[Vida: +50]]")
+
+                            if j.vidatemp >= j.vida:
+                                j.vidatemp = j.vida
+                                print("[[Vida cheia]]")
+                 
+                            
+
+                        
+
+
+                    elif n2 == "9":
+                        break
+
+
+
+class menu2(repeat, personagem):
+    def menus2(self):
+        monk = 0
+        while monk != "1":
+            print("\nSala 02")
+            print("- Aqui o nome:", j.name)
+            print("- Aqui o ouro:", j.ouro)
+            print("[1] Explorar")
+            print("[2] escolher lado esquerdo")
+            print("[3] escolher lado direito")
+            print("[4] Lutar novamente")
+            print("[5] Voltar para trás")
+
+            acoes = input("O que quer fazer?")
+            if acoes == "3":
+                r = repeat()
+                r.repete()
+
+            if acoes == "5":
+                p = menu()
+                p.menus()
+
+
+
+
+
+j = personagem()
+
+
+j = menu()
+j.menus()
+
+
+
+
+
+
+
+
+
