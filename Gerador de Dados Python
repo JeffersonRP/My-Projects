@@ -1,0 +1,65 @@
+def lista_em_txt():
+    selecionados = []
+
+    print("""
+    [1] - Nome
+    [2] - e-mail
+    [3] - Telefone
+    [4] - Cidade
+    [5] - Estado
+    [6] - Sair
+    """)
+    opcoes = input("Digite uma ou mais opções separadas por vírgula (ou '6' para sair): ")
+
+    opcoes_numeros = opcoes.split(',')
+    opcoes_numeros = [int(num) for num in opcoes_numeros]
+    
+    para_lista = ""
+    if 1 in opcoes_numeros:
+        print("Opção 1 selecionada: Nome")
+        para_lista = "Nome!"
+
+    para_lista1 = ""
+    if 2 in opcoes_numeros:
+        print("Opção 2 selecionada: e-mail")
+        para_lista1 = "e-mail"
+
+    para_lista2 = ""
+    if 3 in opcoes_numeros:
+        print("Opção 3 selecionada: Telefone")
+        para_lista2 = "Telefone"
+
+    para_lista3 = ""
+    if 4 in opcoes_numeros:
+        print("Opção 4 selecionada: Cidade")
+        para_lista3 = "Cidade"
+
+    para_lista4 = ""
+    if 5 in opcoes_numeros:
+        print("Opção 5 selecionada: Estado")
+        para_lista4 = "Estado"
+
+    selecionados.extend(opcoes_numeros)
+
+    if 6 in opcoes_numeros:
+        print("Saindo...")
+        return
+
+    lista_toda = [para_lista, para_lista1, para_lista2, para_lista3, para_lista4]
+
+    with open("selecionados.txt", "a") as arquivo:
+        arquivo.write(", ".join(lista_toda) + "\n")
+
+    print("Opções selecionadas foram salvas em 'selecionados.txt'")
+
+def iniciar():
+    ta = True
+    while ta:
+        pergunta = int(input("Quer começar? (1 para sim, 0 para não): "))
+
+        if pergunta == 1:
+            lista_em_txt()
+        else:
+            ta = False
+
+iniciar()
