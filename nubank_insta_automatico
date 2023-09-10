@@ -1,0 +1,115 @@
+import pyautogui
+
+from time import sleep
+
+import webbrowser
+
+# Abrir o site
+webbrowser.open_new_tab("https://www.instagram.com/nubank/")
+
+# Clicar no primeiro
+sleep(5)
+pyautogui.click(1512,728 , duration=1)
+
+
+
+
+
+# Clicar no like apagado
+sleep(2)
+
+clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/like.png')
+
+if clicar_like is None:
+    clicar_like_red = pyautogui.locateCenterOnScreen('instagram_bot/like_red.png')
+    if clicar_like_red is not None:
+        pyautogui.moveTo(clicar_like_red[0], clicar_like_red[1], duration=1)
+else:
+    pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+#          Subir mouse para não atrapalhar
+sleep(2)
+pyautogui.moveTo(1703,498 , duration=1)
+
+
+# Clicar no comentario
+sleep(2)
+
+clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/comment.png')
+
+pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+sleep(2)
+
+clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/comment.png')
+
+pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+
+sleep(2)
+
+
+pyautogui.typewrite('Não sou um robozinho roxo!')
+
+
+pyautogui.press('enter')
+
+sleep(2)
+pyautogui.press('right')
+
+
+
+
+
+
+# Repetir os likes
+for arquivo in range(10):
+    sleep(2)
+    pyautogui.moveTo(1637, 580, duration=0.5)
+
+    sleep(2)
+
+    clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/like.png')
+
+    if clicar_like is None:
+        clicar_like_red = pyautogui.locateCenterOnScreen('instagram_bot/like_red.png')
+        if clicar_like_red is not None:
+            pyautogui.moveTo(clicar_like_red[0], clicar_like_red[1], duration=1)
+    else:
+        pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+    #          Subir mouse para não atrapalhar
+    sleep(2)
+    pyautogui.moveTo(1703,498 , duration=1)
+
+
+    # Clicar no comentario
+    sleep(2)
+
+    clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/comment.png')
+
+    pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+    sleep(2)
+
+    clicar_like = pyautogui.locateCenterOnScreen('instagram_bot/comment.png')
+
+    pyautogui.click(clicar_like[0], clicar_like[1], duration=1)
+
+
+    sleep(2)
+
+
+    pyautogui.typewrite('Não sou um robozinho roxo!')
+
+
+    pyautogui.press('enter')
+
+    sleep(2)
+    pyautogui.press('right')
+
+
+
+
+
+
